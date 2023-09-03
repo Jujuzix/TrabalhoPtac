@@ -2,19 +2,21 @@ import {useState} from "react"
 import './Todo.css'
 import {Link} from "react-router-dom";
 export default function Todo() {
-    const [atividade, setAtividade] = useState("")
+    const [tenis, setTenis] = useState("")
     const [lista, setLista] = useState([]);
+    const[numer, setNumer] = useState(24);
     const [id, setId] = useState(1);
 
     const salvar = (e) =>{
        e.preventDefault();
        setLista([...lista,{
-        atividade: atividade,
-        id:id
+        tenis: tenis,
+        id:id,
+        numer:numer
         
        }])
        setId(id+1);
-       setAtividades("");
+       setTenis("");
     };
     const remover = (id) => {
         const auxLista = [];
@@ -27,22 +29,27 @@ export default function Todo() {
     }
     return (
         <div>
-            <h1>Lista de Atividades</h1>
-            <p>{atividade}</p>
+            <h1>Opções de Tenis</h1>
+            <p>{tenis}</p>
             
+            <div class="add">
             <form onSubmit={salvar}>
-                <input value={atividade}
+                <input value={tenis}
                 onChange={(e)=>
-                {setAtividade(e.target.value)
+                {setTenis(e.target.value)
                     
                 }}/>
                
               <button>Adicionar</button>
             </form>
+            </div>
+             <p>Tenis</p>
+
+
             {lista.map((ativ)=> 
             <ul key={ativ.id}>
                 <li>
-                    <p>{ativ.atividade}</p>
+                    <p>{ativ.tenis}</p>
                     <button onClick={() => remover(ativ.id)}>Remover</button>
                 </li>
             </ul>
