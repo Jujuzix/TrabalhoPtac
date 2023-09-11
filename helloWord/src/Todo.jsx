@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export default function Todo() {
     const [tenis, setTenis] = useState("")
     const [lista, setLista] = useState([]);
-    const[numer, setNumer] = useState(24);
+    const[cor, setCor] = useState("");
     const [id, setId] = useState(1);
 
     const salvar = (e) =>{
@@ -12,11 +12,12 @@ export default function Todo() {
        setLista([...lista,{
         tenis: tenis,
         id:id,
-        numer:numer
+        cor:cor
         
        }])
        setId(id+1);
        setTenis("");
+       setCor("");
     };
     const remover = (id) => {
         const auxLista = [];
@@ -27,9 +28,19 @@ export default function Todo() {
         });
         setLista(auxLista);
     }
+
+    const adicionar = (cor) => {
+        const auxLista = [];
+        lista.map((lista) => {
+            if(lista.cor !== id){
+                auxLista.push(lista);
+            }
+        })
+    }
     return (
         <div>
-            <h1>Opções de Tenis</h1>
+            <h1 class="d">Opções de Tênis</h1>
+            
             <p>{tenis}</p>
             
             <div class="add">
@@ -40,17 +51,19 @@ export default function Todo() {
                     
                 }}/>
                
-              <button>Adicionar</button>
+              <button class="btn">Adicionar</button>
             </form>
             </div>
-             <p>Tenis</p>
+        <h1>Ten</h1>
+            
+             
 
 
             {lista.map((ativ)=> 
             <ul key={ativ.id}>
                 <li>
                     <p>{ativ.tenis}</p>
-                    <button onClick={() => remover(ativ.id)}>Remover</button>
+                    <button  onClick={() => remover(ativ.id)}>Remover</button>
                 </li>
             </ul>
             )}
