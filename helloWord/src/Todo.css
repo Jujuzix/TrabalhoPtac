@@ -55,7 +55,7 @@ h2{
 }
 
 ul{
-    list-style:upper-roman;
+    list-style:none;
     border: 2px solid #000;
     border-radius: 10px;
 }
@@ -74,4 +74,11 @@ button{
 
 p{
     font-size: 20px;
+}
+
+.img{
+    border: 1px solid #000000;
+    width: 450px;
+    height: 455px;
+    
 }
