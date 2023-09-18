@@ -1,13 +1,15 @@
-import {useState} from "react"
+import {useState} from "react" //Gerencia Estado
 import './Todo.css'
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"; //Cria link para Navegação
 export default function Todo() {
     const [tenis, setTenis] = useState("")
     const [lista, setLista] = useState([]);
     const [id, setId] = useState(1);
     const[titulo, setTitu] = useState("");
     const[img,setImg] = useState("");
+     //Estado
 
+ //Salvar o formulário para a lista
     const salvar = (e) =>{
        e.preventDefault();
        setLista([...lista,{
@@ -21,6 +23,8 @@ export default function Todo() {
        setTenis("");
        
     };
+
+    //Função para remover opções 
     const remover = (id) => {
         const auxLista = [];
         lista.map((lista) => {
@@ -31,6 +35,7 @@ export default function Todo() {
         setLista(auxLista);
     }
 
+    
     
     return (
         <div>
@@ -50,15 +55,17 @@ export default function Todo() {
             
              
 
-
+            
+            {/* Aparece Resultado da lista na Página */}
             {lista.map((ativ)=> 
             <ul key={ativ.id}>
                 <li>
                 <div>
                             <img class="img" src={ativ.img}/>
                         </div>
-                    <p>{ativ.tenis}</p>
+                    <h3>{ativ.tenis}</h3>
                     <p>{ativ.titulo}</p>
+                    {/* Botão que recebe da função para remover itens */}
                     <button  onClick={() => remover(ativ.id)}>Remover</button>
                 </li>
             </ul>
