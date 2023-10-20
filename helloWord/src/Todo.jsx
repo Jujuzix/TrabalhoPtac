@@ -1,13 +1,16 @@
-import {useState} from "react" //Gerencia Estado
+import {useEffect, useState} from "react" //Gerencia Estado
 import './Todo.css'
 import {Link} from "react-router-dom"; //Cria link para Navegação
 export default function Todo() {
+const listaLocalStorage = JSON. parse(localStorage.getItem("Lista"));
     const [tenis, setTenis] = useState("")
-    const [lista, setLista] = useState([]);
+    const [lista, setLista] = useState(listaLocalStorage  || []);
     const [id, setId] = useState(1);
     const[titulo, setTitu] = useState("");
     const[img,setImg] = useState("");
+    useEffect(()=>{localStorage.setItem("Lista",JSON.stringify(lista))},[lista]);
      //Estado
+
 
  //Salvar o formulário para a lista
     const salvar = (e) =>{
