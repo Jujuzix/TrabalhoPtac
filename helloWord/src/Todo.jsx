@@ -61,16 +61,26 @@ export default function Todo() {
 
             {/* Aparece Resultado da lista na Página */}
             {lista.map((ativ) =>
+
                 <ul key={ativ.id}>
-                    <li>
-                        <div>
-                            <img class="img" src={ativ.img} />
-                        </div>
-                        <h3>{ativ.tenis}</h3>
-                        <p>{ativ.titulo}</p>
-                        {/* Botão que recebe da função para remover itens */}
-                        <button onClick={() => remover(ativ.id)}>Remover</button>
-                    </li>
+
+                   
+                        <li>
+                            <div>
+                                <img class="img" src={ativ.img} />
+                            </div>
+                            <Link to={`/detalhe/${ativ.id}`}>
+                            <h3>{ativ.tenis}</h3>
+                            </Link> 
+                            
+                           
+                            <p>{ativ.titulo}</p>
+                            
+                            {/* Botão que recebe da função para remover itens */}
+                            <button onClick={() => remover(ativ.id)}>Remover</button>
+                        </li>
+                       
+                   
                 </ul>
             )}
 

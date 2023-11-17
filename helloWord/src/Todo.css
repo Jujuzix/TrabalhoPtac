@@ -1,90 +1,94 @@
-body{
+body {
     margin: 0;
-    padding: 25px 40px 25px 40px;
+    padding: 25px 40px;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    /* Add a generic font-family */
+    background-color: #f0f0f0;
+    /* Set a background color */
 }
 
-.add{
-   text-align: center;
-
+.add {
+    text-align: center;
 }
 
-/*Modificação para as barras */
-input{
+/* Modificação para as barras */
+input {
     width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgb(52, 48, 48);
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(52, 48, 48);
 }
 
-/* Modificação no botão adicionar*/
-.btn{
-  background: #000000;
-  font-size: 15px;
-  font-family:fantasy ;
-  height:45px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 2px solid #000;
-  box-shadow: 0 0 20px rgb(52, 48, 48);
- 
+/* Modificação no botão adicionar */
+.btn {
+    background: #000000;
+    color: #fff;
+    /* Set text color to white for better visibility */
+    font-size: 15px;
+    height: 45px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    box-shadow: 0 0 20px rgb(52, 48, 48);
+    cursor: pointer;
+    /* Add cursor pointer to indicate interactivity */
 }
 
-h1{
+h1,h2,h3 {
     text-align: center;
-    
-}
-
-
-
-
-h1{
-    text-align: center;
-    color: #f0f0f0;
+    color: #fff;
     background-color: #3c3b3b;
-   
+    padding: 10px;
+    
+    /* Add padding for better spacing */
 }
 
-h2{
-    text-align: center;
+h2 {
     font-size: 30px;
 }
 
-h3{
+h3 {
     font-size: 25px;
 }
 
-ul{
-    list-style:none;
+ul {
+    list-style: none;
     border: 2px solid #000000;
     border-radius: 10px;
-  
+    padding: 0;
+    /* Remove default padding */
 }
 
-/* Modificação no botão remover*/
-button{
-    color: #f0f0f0;
+/* Modificação no botão remover */
+button {
+    color: #fff;
     background: #000000;
     font-size: 15px;
-    font-family:fantasy ;
-    height:45px;
+    height: 45px;
     padding: 12px 20px;
     margin: 8px 0;
     border-radius: 10px;
     border: 2px solid #ff0000;
+    cursor: pointer;
 }
 
-p{
+p {
     font-size: 20px;
 }
 
-.img{
-   
-    width: 450px;
-    height: 455px;
+.img {
+    max-width: 100%;
+    height: auto;
+    max-height: 455px;
+}
+
+Link {
     
 }
